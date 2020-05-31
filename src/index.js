@@ -1,10 +1,17 @@
-import React from 'react';
-import {View, Text} from 'react-native';
+import 'react-native-gesture-handler';
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { StatusBar } from 'react-native';
 
-// import { Container } from './styles';
+import Routes from './Routes';
 
-const src = () => {
-  return <Text>Ok</Text>;
-};
-
-export default src;
+export default function App() {
+  return (
+    <>
+      <StatusBar barStyle="light-content" backgroundColor="#3c5aa6" />
+      <NavigationContainer>
+        <Routes />
+      </NavigationContainer>
+    </>
+  );
+}

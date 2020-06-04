@@ -6,10 +6,11 @@ export const Container = styled.View`
   padding: 30px;
   background: #282a36;
 `;
-
 export const Form = styled.View`
   flex-direction: row;
   padding-bottom: 30px;
+  border-bottom-width: 1px;
+  border-color: #474a51;
 `;
 
 export const Input = styled.TextInput.attrs({
@@ -22,42 +23,82 @@ export const Input = styled.TextInput.attrs({
   padding: 0 15px;
   border: 1px solid #eee;
 `;
+
 export const SubmitButton = styled(RectButton)`
   justify-content: center;
   align-items: center;
-  background: #758;
-  border-radius: 5px;
-  margin-left: 7px;
-  padding: 0 11px;
+  background: #7159c1;
+  border-radius: 4px;
+  margin-left: 10px;
+  padding: 0 12px;
 `;
-export const PokeInformation = styled.View`
+
+export const List = styled.FlatList.attrs({
+  showsVerticalScrollIndicator: false,
+})`
+  margin-top: 20px;
+`;
+
+export const Pokemon = styled.View`
   align-items: center;
   margin: 0 20px 30px;
 `;
 
-export const Name = styled.Text`
-  font-size: 16px;
-  color: #ffffff;
-  font-weight: bold;
-  margin-top: 5px;
-  margin-bottom: 25px;
-  text-align: center;
-  text-transform: capitalize;
-`;
-
 export const Avatar = styled.Image`
-  width: 180px;
-  height: 180px;
-  border-radius: 90px;
+  width: 160px;
+  height: 160px;
+  border-radius: 80px;
   background: #eee;
 `;
 
-export const Bio = styled.Text`
-  font-size: 16px;
+export const Name = styled.Text`
+  font-size: 14px;
+  color: #ffffff;
+  font-weight: bold;
+  margin-top: 5px;
+  text-align: center;
 `;
-export const Weight = styled.Text`
-  font-size: 16px;
+
+export const Type = styled.Text`
+  font-size: 14px;
+  color: #ffffff;
+  font-weight: bold;
+  margin-top: 5px;
+  text-align: center;
 `;
-export const aa = styled.Text`
-  font-size: 16px;
+export const Weight = styled.Text.attrs({
+  numberOfLines: 2,
+})`
+  font-size: 13px;
+  line-height: 18px;
+  color: #fff;
+  margin-top: 5px;
+  text-align: center;
+`;
+
+export const Height = styled.Text.attrs({
+  numberOfLines: 2,
+})`
+  font-size: 13px;
+  line-height: 18px;
+  color: #fff;
+  margin-top: 5px;
+  text-align: center;
+`;
+
+export const ProfileButton = styled(RectButton)`
+  margin-top: 10px;
+  align-self: stretch;
+  border-radius: 4px;
+  background: #7159c1;
+  justify-content: center;
+  align-items: center;
+  height: 36px;
+`;
+
+export const ProfileButtonText = styled.Text`
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
 `;

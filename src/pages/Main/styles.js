@@ -4,13 +4,11 @@ import { RectButton } from 'react-native-gesture-handler';
 export const Container = styled.View`
   flex: 1;
   padding: 30px;
-  background: #282a36;
+  background: #fff;
 `;
 export const Form = styled.View`
   flex-direction: row;
-  padding-bottom: 30px;
-  border-bottom-width: 1px;
-  border-color: #474a51;
+  padding-bottom: 20px;
 `;
 
 export const Input = styled.TextInput.attrs({
@@ -27,7 +25,7 @@ export const Input = styled.TextInput.attrs({
 export const SubmitButton = styled(RectButton)`
   justify-content: center;
   align-items: center;
-  background: #7159c1;
+  background: #3c5aa6;
   border-radius: 4px;
   margin-left: 10px;
   padding: 0 12px;
@@ -52,19 +50,20 @@ export const Avatar = styled.Image`
 `;
 
 export const Name = styled.Text`
-  font-size: 14px;
-  color: #ffffff;
+  font-size: 20px;
   font-weight: bold;
-  margin-top: 5px;
+  margin-top: 25px;
   text-align: center;
+  text-transform: capitalize;
 `;
 
 export const Type = styled.Text`
-  font-size: 14px;
-  color: #ffffff;
+  font-size: 15px;
+  color: #000;
   font-weight: bold;
   margin-top: 5px;
   text-align: center;
+  text-transform: capitalize;
 `;
 export const Weight = styled.Text.attrs({
   numberOfLines: 2,
@@ -87,10 +86,10 @@ export const Height = styled.Text.attrs({
 `;
 
 export const ProfileButton = styled(RectButton)`
-  margin-top: 10px;
+  margin-top: 15px;
   align-self: stretch;
   border-radius: 4px;
-  background: #7159c1;
+  background: #3c5aa6;
   justify-content: center;
   align-items: center;
   height: 36px;
@@ -101,4 +100,9 @@ export const ProfileButtonText = styled.Text`
   font-weight: bold;
   color: #fff;
   text-transform: uppercase;
+`;
+export const Xp = styled.Text`
+  font-size: 18px;
+  margin-top: 15px;
+  padding-left: 205px;
 `;

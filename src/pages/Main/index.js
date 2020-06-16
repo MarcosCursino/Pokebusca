@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { Keyboard } from 'react-native';
-import Icons from 'react-native-vector-icons/MaterialIcons';
+import Icon from 'react-native-vector-icons/Ionicons';
 import api from '../../services/api';
 
 import {
@@ -13,21 +12,13 @@ import {
   Pokemon,
   ProfileButton,
   ProfileButtonText,
-  Weight,
-  Height,
   Type,
   Name,
   Avatar,
+  Xp,
 } from './styles';
 
 export default class Main extends Component {
-  /**
-  static propTypes = {
-    navigation: PropTypes.shape({
-      navigate: PropTypes.func,
-    }).isRequired,
-  }; */
-
   state = {
     newPokemon: '',
     pokemon: [],
@@ -36,19 +27,21 @@ export default class Main extends Component {
   handleAddUser = async () => {
     const { newPokemon } = this.state;
     const response = await api.get(`/pokemon/${newPokemon}`);
-    /**  const responseBio = await api.get(
+    const responseDesc = await api.get(
       `/pokemon-species/${response.data.game_indices[0].game_index}`
     );
-
-     */
 
     const data = {
       weight: response.data.weight,
       height: response.data.height,
       type: response.data.types.map((type) => type.type.name).join(' / '),
+      skills: response.data.abilities
+        .map((abilityPokemon) => abilityPokemon.ability.name)
+        .join(' / '),
+      xp: response.data.base_experience,
       id: response.data.game_indices[0].game_index,
       name: response.data.name,
-      // bio: responseBio.data.flavor_text_entries[53].flavor_text,
+      bio: responseDesc.data.flavor_text_entries[18].flavor_text,
       avatar_url: response.data.sprites.front_default,
     };
 
@@ -63,7 +56,6 @@ export default class Main extends Component {
     const { navigation } = this.props;
 
     navigation.navigate('About', { pokei });
-    // console.log(pokei);
   };
 
   render() {
@@ -74,14 +66,14 @@ export default class Main extends Component {
           <Input
             autoCorret={false}
             autoCapitalize="none"
-            placeholder="Adicionar Usuário"
+            placeholder="Digite o nome Pokémon"
             value={newPokemon}
             onChangeText={(text) => this.setState({ newPokemon: text })}
             returnKeyType="send"
             onSubmitEditing={this.handleAddUser}
           />
           <SubmitButton onPress={this.handleAddUser}>
-            <Icons name="add" size={20} color="#fff" />
+            <Icon name="ios-search" size={20} color="#FFF" />
           </SubmitButton>
         </Form>
 
@@ -90,13 +82,13 @@ export default class Main extends Component {
           keyExtractor={(poke) => poke.name}
           renderItem={({ item }) => (
             <Pokemon>
-              <Name>Nome: {item.name}</Name>
+              <Xp>{item.xp} XP</Xp>
               <Avatar source={{ uri: item.avatar_url }} />
+              <Name>{item.name}</Name>
               <Type>Tipo: {item.type}</Type>
-              <Height>Altura: {item.height * 10} CM</Height>
-              <Weight>Peso: {item.weight} KG</Weight>
+
               <ProfileButton onPress={() => this.handleNavigate(item)}>
-                <ProfileButtonText>Ver Perfil</ProfileButtonText>
+                <ProfileButtonText>Detalhes do Pokémon</ProfileButtonText>
               </ProfileButton>
             </Pokemon>
           )}

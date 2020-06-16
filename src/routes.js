@@ -12,12 +12,15 @@ export default function Routes() {
       screenOptions={{
         headerTitleAlign: 'center',
         headerBackTitleVisible: 'false',
+        headerBackTitle: 'Voltar',
         headerStyle: {
-          backgroundColor: '#3c5aa6',
+          backgroundColor: '#FFF',
+          elevation: 0,
         },
-        headerTintColor: '#FFFFFF',
+        headerTintColor: '#000',
         headerTitleStyle: {
           fontWeight: 'bold',
+          textTransform: 'capitalize',
         },
       }}
     >
@@ -25,15 +28,16 @@ export default function Routes() {
         name="Main"
         component={Main}
         options={{
-          title: 'Poke Busca',
+          eaderMode: 'none',
+          headerShown: false,
         }}
       />
       <Stack.Screen
         name="About"
         component={About}
-        ptions={{
-          title: 'Detalhes',
-        }}
+        options={({ route }) => ({
+          title: route.params.pokei.name,
+        })}
       />
     </Stack.Navigator>
   );

@@ -1,12 +1,16 @@
 import React from 'react';
-import { View, Text } from 'react-native';
 
-// import { Container } from './styles';
+import { Container, Bio, Weight, Height, Ability } from './styles';
 
-export default function About({ route }) {
+const About = ({ route }) => {
   return (
-    <View>
-      <Text>Tipo: {route.params.pokei.type}</Text>
-    </View>
+    <Container>
+      <Bio>{route.params.pokei.bio}</Bio>
+      <Ability>Habilidades: {route.params.pokei.skills}</Ability>
+      <Weight>Peso: {route.params.pokei.weight / 10} KG</Weight>
+      <Height>Altura: {route.params.pokei.height * 10} CM</Height>
+    </Container>
   );
-}
+};
+
+export default About;

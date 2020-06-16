@@ -14,7 +14,6 @@ This project was developed with the following technologies:
 - [React Native Vector Icons](https://github.com/oblador/react-native-vector-icons)
 - [Eslint](https://eslint.org/)
 - [Prettier](https://prettier.io/)
-- [Prettier](https://www.linkedin.com/in/marcos-cursino/)
 
 ## 🤔 How to contribute
 

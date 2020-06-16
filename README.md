@@ -2,10 +2,6 @@
 
 Poke Search is an application about pokemon status, the information is consumed from an external api (Pokeapi).
 
-<h1 align="center">
-    <img alt="Login-Page" title="Login-Page" src=".github/preview.jpg" width="500px" />
-</h1>
-
 ## :rocket: Technologies
 
 This project was developed with the following technologies:
@@ -28,11 +24,10 @@ This project was developed with the following technologies:
 
 After merging your receipt request to done, you can delete a branch from yours.
 
-
 ## :memo: License
 
 This project is under the MIT license. See the [LICENSE](LICENSE.md) for details.
 
 ---
 
-Made with ♥ by Marcos Cursino :wave: [Get in touch!](www.linkedin.com/in/marcos-cursino)
+Made with ♥ by Marcos Cursino :wave: [Get in touch!](www.google.com)

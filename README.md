@@ -14,6 +14,7 @@ This project was developed with the following technologies:
 - [React Native Vector Icons](https://github.com/oblador/react-native-vector-icons)
 - [Eslint](https://eslint.org/)
 - [Prettier](https://prettier.io/)
+- [Prettier](https://www.linkedin.com/in/marcos-cursino/)
 
 ## 🤔 How to contribute
 
@@ -30,4 +31,4 @@ This project is under the MIT license. See the [LICENSE](LICENSE.md) for details
 
 ---
 
-Made with ♥ by Marcos Cursino :wave: [Get in touch!](www.google.com)
+Made with ♥ by Marcos Cursino :wave: [Get in touch!](https://www.linkedin.com/in/marcos-cursino/)
